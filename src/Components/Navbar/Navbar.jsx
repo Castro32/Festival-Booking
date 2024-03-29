@@ -82,7 +82,7 @@ const Navbar = () => {
         
         
         
-        <Link to={"/about"} className="link-styles">
+        <Link to={"/faqs"} className="link-styles">
           <li
             className={
               activeTab === "holiday-types" ? "activeTab" : "nonActive"
@@ -92,22 +92,8 @@ const Navbar = () => {
           FAQS
           </li>
         </Link>
-        <Link to={"/about-us"} className="link-styles">
-          <li
-            className={activeTab === "about-us" ? "activeTab" : "nonActive"}
-            onClick={() => setActiveTab("about-us")}
-          >
-            Rooms
-          </li>
-        </Link>
-        <Link to={"/blog"} className="link-styles">
-          <li
-            className={activeTab === "blog" ? "activeTab" : "nonActive"}
-            onClick={() => setActiveTab("blog")}
-          >
-            Blog
-          </li>
-        </Link>
+        
+        
 
         <Link to={"/contact"} className="link-styles">
           <li
@@ -123,7 +109,7 @@ const Navbar = () => {
             className={activeTab === "book-now" ? "activeTab" : "nonActive"}
             onClick={() => setActiveTab("book-now")}
           >
-            <button>Book Now!</button>
+            <button>Buy Ticket!</button>
           </Link>
           {/* <Link to={"/log-in"}>
             <button>Log In</button>

@@ -1,9 +1,10 @@
 import './App.css';
 import About from './Components/About/About';
-import Contact from './Components/Contact/Contact';
+import Contact from './Components/Partners/Partners';
 import Home from './Components/Home/Home';
 import Navbar from './Components/Navbar/Navbar';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Partners from './Components/Partners/Partners';
 
 
 
@@ -15,11 +16,12 @@ function App() {
       <BrowserRouter>
       <Navbar/>
       <Home/>
-      <About/>
+      <Partners/>
+     <About/>
       
       <Routes>
-        <Route path='/faqs' element={<About />} />
-        <Route path='contact' element={<Contact/>}/>
+        <Route path='faqs' element={<About />} />
+        <Route path='partners' element={<Partners/>}/>
       </Routes>
       <Contact/>
       </BrowserRouter>

@@ -1,0 +1,52 @@
+.d-container{
+    justify-content: space-between;
+    gap: 100px;
+    margin: auto;
+    
+}
+.partner{
+    display: flex;
+    justify-content: center;
+}
+.d-container>img{
+    width: 7rem;
+}
+.addings{
+    padding: 1.5rem;
+}
+.inerwidth{
+    width: 80%;
+}
+.flexenter{
+  display: flex;
+  row-gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+@media (max-width:768px) {
+    .d-container{
+        gap: 10px;
+       
+        justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .d-container>img{
+        width: 6rem;
+    }
+    .addings{
+        padding-left: 3.5rem;
+        align-items: center;
+    }
+    .inerwidth{
+        width: 80%;
+    }
+    .flexenter{
+      display: flex;
+      row-gap: 2rem;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+}

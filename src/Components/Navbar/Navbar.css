@@ -1,30 +1,88 @@
-.h-wrapper{
-    height: 120px;
-    background: powderblue;
-}
-.menu{
+.navbar {
     display: flex;
-    gap: 10px;
-    padding: 20px;
     justify-content: space-between;
-}
-.menu>*:hover{
-    cursor: pointer;
-}
-.menu img{
-    width: 70px;
-    height: 70px;
-}
-.book-button{
-    border: none;
-    border-radius: 15px;
-    color: #424242;
-    box-shadow: -6px -6px 10px #f9f9f9,
-    -6px -6px 10px #00000026;
+    align-items: center;
+    background-color: powderblue;
     padding: 10px;
-    margin-right: 10px;
-    background: powderblue;
-}
-.book-button:hover{
-    box-shadow: 2px 2px 2px #f9f9f9;
-}
+  }
+  
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-brand img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .navbar-toggler {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .navbar-menu {
+    display: flex;
+  }
+  
+  .navbar-menu ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar-menu li {
+    margin-left: 20px;
+  }
+  
+  .navbar-menu a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+  }
+  
+  .book-button {
+    background-color: peru;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 4px;
+  }
+  
+  @media (max-width: 768px) {
+    .navbar-toggler {
+        top: 0;
+        right: 0;
+      display: block;
+    }
+  
+    .navbar-menu {
+        z-index: 999;
+      display: none;
+      position: relative;
+      top: 30px;
+      right: 0;
+      width: 100px;
+      background-color: rgb(175, 186, 188);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .navbar-brand img {
+        width: 20px;
+        height: 20px;
+        margin-left: 0;
+      }
+    .navbar-menu.open {
+      display: block;
+    }
+  
+    .navbar-menu ul {
+      flex-direction: column;
+    }
+  
+    .navbar-menu li {
+      margin: 10px 0;
+    }
+  }

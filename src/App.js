@@ -5,6 +5,8 @@ import Home from './Components/Home/Home';
 import Navbar from './Components/Navbar/Navbar';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Partners from './Components/Partners/Partners';
+import PastEvents from './Components/Past Events/PastEvents';
+import Footer from './Components/Footer/Footer';
 
 
 
@@ -16,14 +18,13 @@ function App() {
       <BrowserRouter>
       <Navbar/>
       <Home/>
-      <Partners/>
-     <About/>
-      
+      <Partners/> 
       <Routes>
         <Route path='faqs' element={<About />} />
-        <Route path='partners' element={<Partners/>}/>
       </Routes>
       <Contact/>
+      <PastEvents/>
+      <Footer/>
       </BrowserRouter>
     </div>
   );

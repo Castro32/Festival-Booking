@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-
 import { Link, /* useLocation  */} from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 /* import useLocalStorage from "use-local-storage"; */
@@ -10,15 +9,6 @@ const Navbar = () => {
   const handleToggle = () => setToggle(!toggle);
   const [activeTab, setActiveTab] = useState("home");
   const [pos, setPos] = useState("top");
-  const logoStyle = {
-    width: '100px',
-    height: '100px',
-    position: 'absolute',
-    top: '20px',
-    left: '20px',
-};
-
-
  /*  const [ route,  setRoute] = useState("/"); */
 
   useEffect(() => {
@@ -53,16 +43,17 @@ const Navbar = () => {
   }, [activeTab]);
 
   return (
-    
     <Container
-    
       style={{
         backgroundColor:
           pos === "top" ? "rgba(0, 0, 0, 0)" : "rgb(255, 255, 255)",
       }}
     >
-      <img src="festival logo.png" alt="Festival Logo" style={logoStyle}>
-        </img>
+      <Link to={"/"} className="link-styles">
+      <img src="festival logo.png" style={{ width: '40px', height: '40px', border: '1px solid black' }} />
+
+
+      </Link>
 
       <div className={toggle ? "blur active" : "blur"}></div>
 
@@ -70,7 +61,6 @@ const Navbar = () => {
         onClick={handleToggle}
         className={toggle ? "nav-menu active" : "nav-menu"}
       >
-        
         <Link to={"/"} className="link-styles">
           <li
             className={activeTab === "home" ? "activeTab" : "nonActive"}
@@ -79,26 +69,45 @@ const Navbar = () => {
             Home
           </li>
         </Link>
-        
-        
-        
-        <Link to={"/faqs"} className="link-styles">
+        <Link to={"/destinations"} className="link-styles">
+          <li
+            className={activeTab === "destinations" ? "activeTab" : "nonActive"}
+            onClick={() => setActiveTab("destinations")}
+          >
+            Destinations
+          </li>
+        </Link>
+        <Link to={"/holiday-types"} className="link-styles">
           <li
             className={
               activeTab === "holiday-types" ? "activeTab" : "nonActive"
             }
             onClick={() => setActiveTab("holiday-types")}
           >
-          FAQS
+            Holiday Types
           </li>
         </Link>
-        
-        
-
-        <Link to={"/contact"} className="link-styles">
+        <Link to={"/about-us"} className="link-styles">
           <li
-            className={activeTab === "contact" ? "activeTab" : "nonActive"}
-            onClick={() => setActiveTab("contact")}
+            className={activeTab === "about-us" ? "activeTab" : "nonActive"}
+            onClick={() => setActiveTab("about-us")}
+          >
+            About Us
+          </li>
+        </Link>
+        <Link to={"/blog"} className="link-styles">
+          <li
+            className={activeTab === "blog" ? "activeTab" : "nonActive"}
+            onClick={() => setActiveTab("blog")}
+          >
+            Blog
+          </li>
+        </Link>
+
+        <Link to={"/contact-us"} className="link-styles">
+          <li
+            className={activeTab === "contact-us" ? "activeTab" : "nonActive"}
+            onClick={() => setActiveTab("contact-us")}
           >
             Contact Us
           </li>
@@ -109,7 +118,7 @@ const Navbar = () => {
             className={activeTab === "book-now" ? "activeTab" : "nonActive"}
             onClick={() => setActiveTab("book-now")}
           >
-            <button>Buy Ticket!</button>
+            <button>Book Now!</button>
           </Link>
           {/* <Link to={"/log-in"}>
             <button>Log In</button>
@@ -129,9 +138,9 @@ const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 1% 4%;
-  position: fixed;
+  position: sticky;
   top: 0;
-  height: 95px;
+  height: 45px;
   width: 90%;
   z-index: 100;
   overflow-x: visible;
@@ -189,7 +198,7 @@ const Container = styled.div`
   }
   @media (max-width: 1004px) {
     .blur {
-      width: 100%;
+      width: 50%;
       height: 230vh;
       backdrop-filter: blur(10px);
       position: absolute;

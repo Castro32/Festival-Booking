@@ -24,29 +24,3 @@
   align-items: center;
   flex-wrap: wrap;
 }
-@media (max-width:768px) {
-    .d-container{
-        gap: 10px;
-       
-        justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    .d-container>img{
-        width: 6rem;
-    }
-    .addings{
-        padding-left: 3.5rem;
-        align-items: center;
-    }
-    .inerwidth{
-        width: 80%;
-    }
-    .flexenter{
-      display: flex;
-      row-gap: 2rem;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-}

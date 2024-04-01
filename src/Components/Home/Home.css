@@ -1,54 +1,77 @@
 .home {
-    position: relative;
-    width: 96%;
-    height: 850px;
-    overflow: hidden;
+  position: relative;
+  width: 96%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.slider {
+  margin: 40px;
+  height: 180%;
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  flex: 0 0 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Optional: Add animation styles */
+@keyframes slide {
+  0% {
+    transform: translateX(0);
   }
-  
+  20% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-100%);
+  }
+  45% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(-200%);
+  }
+  70% {
+    transform: translateX(-200%);
+  }
+  75% {
+    transform: translateX(-300%);
+  }
+  95% {
+    transform: translateX(-300%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.slider {
+  animation: slide 20s infinite;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .home {
+    height: 50vh; /* Adjust height for smaller screens */
+  }
+
   .slider {
-   margin: 40px;
-    height: 180%;
-    display: flex;
-    transition: transform 0.5s ease-in-out;
+    height: 100%; /* Adjust height for smaller screens */
+    margin: 20px; /* Reduce margin for smaller screens */
   }
-  
-  .slide {
-    flex: 0 0 100%;
-    background-size: cover;
-    background-position: center;
+}
+
+@media (max-width: 480px) {
+  .home {
+    height: 50vh; /* Adjust height for even smaller screens */
   }
-  
-  /* Optional: Add animation styles */
-  @keyframes slide {
-    0% {
-      transform: translateX(0);
-    }
-    20% {
-      transform: translateX(0);
-    }
-    25% {
-      transform: translateX(-100%);
-    }
-    45% {
-      transform: translateX(-100%);
-    }
-    50% {
-      transform: translateX(-200%);
-    }
-    70% {
-      transform: translateX(-200%);
-    }
-    75% {
-      transform: translateX(-300%);
-    }
-    95% {
-      transform: translateX(-300%);
-    }
-    100% {
-      transform: translateX(0);
-    }
-  }
-  
+
   .slider {
-    animation: slide 20s infinite;
+    height: 90%; /* Adjust height for even smaller screens */
+    margin: 10px; /* Reduce margin for even smaller screens */
   }
+}

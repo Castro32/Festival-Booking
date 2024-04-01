@@ -9,27 +9,12 @@ const PastEvents = () => {
   }, []);
   return (
     <Container>
-      <div className="banner">
-        
-        <motion.div
-          animate={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: 200 }}
-          transition={{
-            duration: 0.7,
-            delay: 0.3,
-            bounce: 0.3,
-            type: "spring",
-          }}
-          className="details"
-        >
-          <h1><strong>Past Events.</strong></h1>
-          <p>
-            Every journey tells a story, and every holiday is a chapter in your
-            adventure.
-          </p>
-        </motion.div>
-      </div>
+      
       <div className="cards">
+      <h1><strong>Past Events.</strong></h1>
+          <p>
+            Gallery of our past events.
+          </p>
         <div className="card">
           <img
             src="./asst1.jpeg"
@@ -161,7 +146,7 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 4em;
-    margin: 7em 0;
+    margin: 4em 0;
     .card {
       width: 80vw;
       max-width: 1200px;

@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-
 import { AiFillInstagram, AiFillTwitterCircle } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { BsFacebook } from "react-icons/bs";
 import { SiGmail } from "react-icons/si";
-
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -29,198 +27,241 @@ const Footer = () => {
       return;
     }
 
-    
+    // Simulate subscription process (can be replaced with actual logic)
+    setTimeout(() => {
+      setLoading(false);
+      setSuccessMessage("Subscription successful!");
+      setEmail("");
+    }, 2000);
   };
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
 
-
-
   return (
-    <Container>
-      <footer className="bg-[#2E2E3A]">
-        <div className="container page-padding pb-[5rem] pt-[2rem]">
-          {/* footer div all */}
-          <div className="flex justify-between min620:flex-col min620:items-center min620:text-center min620:gap-[5rem] !text-left">
-            {/* logo side */}
-            <div className="flex flex-col w-1/3 gap-8 ml-8">
-              <img src="festival logo.png" alt="footer_logo" className="w-[18rem]" />
-              <p className="text-[18px] font-medium text-[#FFFFFF]">
-                Empowering Journeys, Enchanting Memories <br />Discover the Heartbeat of East Africa with Us!
-              </p>
-              {/* socials */}
-              <div className="flex gap-7 text-[18px] text-[#FFFFFF] min540:justify-center">
-                <a href="https://www.instagram.com/">
-                  <AiFillInstagram className="text-[35px] hover:text-[#4FC0D6]"/>
-                </a>
-
-                <a href="https://www.instagram.com/">
-                  <AiFillTwitterCircle className="text-[35px] hover:text-[#4FC0D6]" />
-                </a>
-                
-                
-                
-                <a href="https://www.instagram.com/">
-                  <SiGmail className="text-[35px] hover:text-[#4FC0D6]" />
-                </a>
-                
-              </div>
-              <p className="text-[16px] font-medium text-[#FFFFFF]">
-                Privacy Policy | © {new Date().getFullYear()} Raha Festival <br />{" "}
-                Designed by{" "}
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://jam3s.netlify.app/"
-                  class="text-[#4FC0D6] font-bold"
-                >
-                  JAM3S.DEV
-                </a>
-              </p>
+    <StyledFooter>
+      <div className="container">
+        <div className="footer-content">
+          <div className="footer-section">
+            <img src="festival logo.png" alt="footer_logo" className="logo" />
+            <p className="footer-text">
+              Empowering Journeys, Enchanting Memories <br />
+              Discover the Heartbeat of East Africa with Us!
+            </p>
+            <div className="social-icons">
+              <a href="https://www.instagram.com/">
+                <AiFillInstagram className="icon" />
+              </a>
+              <a href="https://www.instagram.com/">
+                <AiFillTwitterCircle className="icon" />
+              </a>
+              <a href="https://www.instagram.com/">
+                <SiGmail className="icon" />
+              </a>
             </div>
-
-            {/* middle div */}
-            <div className="flex flex-col gap-8 relative">
-              <p className="text-[22px] text-[#FFFFFF] font-bold footer-main">PermaLinks</p>
-
-              <span className="top-[33px] absolute w-[7rem] h-[4px] bg-[#4FC0D6]"></span>
-              
-              <Link to={"/"}>
-                <p className="text-[16px] hover:text-[#4FC0D6] cursor-pointer text-[#FFFFFF] font-medium hover:font-bold">
-                  Home
-                </p>
+            <p className="footer-text">
+              Privacy Policy | © {new Date().getFullYear()} Raha Festival <br />
+              Designed by{" "}
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://jam3s.netlify.app/"
+                className="designer-link"
+              >
+                JAM3S.DEV
+              </a>
+            </p>
+          </div>
+          <div className="footer-section">
+            <p className="footer-heading">PermaLinks</p>
+            <div className="link-list">
+              <Link to={"/"} className="footer-link">
+                Home
               </Link>
-              
-              <Link to={"/destinations"}>
-                <p className="text-[16px] hover:text-[#4FC0D6] cursor-pointer text-[#FFFFFF] font-medium hover:font-bold">
-                  Destinations
-                </p>
+              <Link to={"/destinations"} className="footer-link">
+                Partners
               </Link>
-              
-              <Link to={"/holiday-types"}>
-                <p className="text-[16px] hover:text-[#4FC0D6] cursor-pointer text-[#FFFFFF] font-medium hover:font-bold">
-                  Holiday Types
-                </p>
+              <Link to={"/about-us"} className="footer-link">
+                FAQs
               </Link>
-              
-              <Link to={"/about-us"}>
-                <p className="text-[16px] hover:text-[#4FC0D6] cursor-pointer text-[#FFFFFF] font-medium hover:font-bold">
-                  About Us
-                </p>
-              </Link>
-              
-              <Link to={"/blog"}>
-                <p className="text-[16px] hover:text-[#4FC0D6] cursor-pointer text-[#FFFFFF] font-medium hover:font-bold">
-                  Blog
-                </p>
-              </Link>
-              
-              <Link to={"/contact-us"}>
-                <p className="text-[16px] hover:text-[#4FC0D6] cursor-pointer text-[#FFFFFF] font-medium hover:font-bold">
-                  Contact Us
-                </p>
+              <Link to={"/holiday-types"} className="footer-link">
+                Past Events
               </Link>
             </div>
-
-            {/* Subscription Div */}
-            <div className="flex flex-col gap-8 relative">
-      <p className="text-[22px] text-[#FFFFFF] font-bold footer-main">
-        Subscribe to our Newsletter
-      </p>
-
-      <span className="top-[33px] absolute w-[7rem] h-[4px] bg-[#4FC0D6]"></span>
-
-      <div className="flex flex-col gap-4">
-
-  <label htmlFor="email" className="text-[16px] text-[#FFFFFF] font-medium">
-    Email:
-  </label>
-  <input
-    type="text"
-    id="email"
-    name="email"
-    placeholder="Enter your email"
-    className="border border-[#4FC0D6] rounded p-2 text-[16px] text-black" 
-    onChange={handleEmailChange}
-  />
-</div>
-
-      <button
-        className="bg-[#4FC0D6] text-[16px] text-[#FFFFFF] py-2 px-4 rounded hover:bg-opacity-80"
-        onClick={handleClick}
-        disabled={loading}
-      >
-        {loading ? 'Loading...' : 'Subscribe'}
-      </button>
-
-      {successMessage && <p className="text-green-500">{successMessage}</p>}
-      {errorMessage && <p className="text-red-500">{errorMessage}</p>}
-    </div>
-      
-  
-
-            {/* right div */}
-            <div className="flex flex-col gap-8 relative">
-              <p className="text-[22px] font-bold text-[#FFFFFF] footer-main">Contacts</p>
-
-              <span className="top-[33px] absolute w-[7rem] h-[4px] bg-[#4FC0D6]"></span>
-
-              <p className="text-[16px]  text-[#FFFFFF] font-bold">
-                +254 722 636 346
-              </p>
-              <p className="text-[16px] text-[#FFFFFF] font-medium">
-                africanoutbacksafaris@gmail.com
-              </p>
-              
+          </div>
+          <div className="footer-section">
+            <p className="footer-heading">Subscribe to our Newsletter</p>
+            <div className="subscribe-form">
+              <input
+                type="text"
+                placeholder="Enter your email"
+                className="email-input"
+                value={email}
+                onChange={handleEmailChange}
+              />
+              <button
+                className="subscribe-button"
+                onClick={handleClick}
+                disabled={loading}
+              >
+                {loading ? "Loading..." : "Subscribe"}
+              </button>
             </div>
-
-            {/* middle div */}
-            <span></span>
+            {successMessage && <p className="success-message">{successMessage}</p>}
+            {errorMessage && <p className="error-message">{errorMessage}</p>}
+          </div>
+          <div className="footer-section">
+            <p className="footer-heading">Contacts</p>
+            <p className="contact-info">+254114096574</p>
+            <p className="contact-info">okanga.fidel@gmail.com</p>
           </div>
         </div>
-      </footer>
-    </Container>
+      </div>
+    </StyledFooter>
   );
 };
-const Container = styled.div`
+
+const StyledFooter = styled.footer`
+  background-color: #2e2e3a;
+  color: #ffffff;
+  padding: 2rem 0;
 
   .container {
     max-width: 124rem;
     margin: 0 auto;
-  }
-  &.email-text::placeholder {
-    color: black;
+    padding: 0 2rem;
   }
 
-  &.email-text {
-    color: black;
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
   }
-  @media (max-width: 860px) {
-    flex-direction: column;
-    align-items: center;
-    gap: 4em;
+
+  .footer-section {
+    flex: 1 1 20rem;
   }
-  @media (max-width: 597px) {
-    .logo {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+  .footer-section .logo{
+    width: 100px;
+    height: 100px;
+  }
+  .footer-heading {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  .footer-text {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .icon {
+    font-size: 35px;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #4fc0d6;
     }
-    .columns {
+  }
+
+  .footer-link {
+    font-size: 16px;
+    color: #ffffff;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    display: block;
+
+    &:hover {
+      font-weight: bold;
+      color: #4fc0d6;
+    }
+  }
+
+  .subscribe-form {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .email-input {
+    border: 1px solid #4fc0d6;
+    padding: 0.5rem;
+    font-size: 16px;
+    color: #000000;
+    flex: 1;
+  }
+
+  .subscribe-button {
+    background-color: #4fc0d6;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: rgba(79, 192, 214, 0.8);
+    }
+
+    &:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+  }
+
+  .success-message {
+    color: #00ff00;
+    margin-top: 0.5rem;
+  }
+
+  .error-message {
+    color: #ff0000;
+    margin-top: 0.5rem;
+  }
+
+  .contact-info {
+    font-size: 16px;
+    margin-bottom: 0.5rem;
+  }
+
+  .designer-link {
+    color: #4fc0d6;
+    font-weight: bold;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  @media (max-width: 860px) {
+    .footer-content {
       flex-direction: column;
-      text-align: center;
-      .iconColumn {
-        flex-direction: row;
-      }
+      gap: 2rem;
+    }
+
+    .footer-section {
+      flex: 1 1 auto;
+      width: 100%;
+    }
+
+    .subscribe-form {
+      flex-direction: column;
     }
   }
 `;
-
-
-
-
-
 
 export default Footer;

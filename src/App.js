@@ -19,10 +19,7 @@ function App() {
       <Navbar/>
       <Home/>
       <Partners/> 
-      <Routes>
-        <Route path='faqs' element={<About />} />
-      </Routes>
-      <Contact/>
+      <About/>
       <PastEvents/>
       <Footer/>
       </BrowserRouter>

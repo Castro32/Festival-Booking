@@ -69,49 +69,42 @@ const Navbar = () => {
             Home
           </li>
         </Link>
-        <Link to={"/destinations"} className="link-styles">
+        <Link to={"/partners"} className="link-styles">
           <li
             className={activeTab === "destinations" ? "activeTab" : "nonActive"}
             onClick={() => setActiveTab("destinations")}
           >
-            Destinations
+            Partners
           </li>
         </Link>
-        <Link to={"/holiday-types"} className="link-styles">
+        <Link to={"/faqs"} className="link-styles">
           <li
             className={
               activeTab === "holiday-types" ? "activeTab" : "nonActive"
             }
             onClick={() => setActiveTab("holiday-types")}
           >
-            Holiday Types
+            FAQs
           </li>
         </Link>
-        <Link to={"/about-us"} className="link-styles">
+        <Link to={"/past-events"} className="link-styles">
           <li
             className={activeTab === "about-us" ? "activeTab" : "nonActive"}
             onClick={() => setActiveTab("about-us")}
           >
-            About Us
+            Past Events
           </li>
         </Link>
-        <Link to={"/blog"} className="link-styles">
+        <Link to={"/contact"} className="link-styles">
           <li
             className={activeTab === "blog" ? "activeTab" : "nonActive"}
             onClick={() => setActiveTab("blog")}
           >
-            Blog
-          </li>
-        </Link>
-
-        <Link to={"/contact-us"} className="link-styles">
-          <li
-            className={activeTab === "contact-us" ? "activeTab" : "nonActive"}
-            onClick={() => setActiveTab("contact-us")}
-          >
             Contact Us
           </li>
         </Link>
+
+        
         <div className="buttons">
            <Link
             to={"/book-now"}

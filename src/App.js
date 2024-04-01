@@ -20,6 +20,10 @@ function App() {
       <Home/>
       <Partners/> 
       <About/>
+      <Routes>
+        
+      </Routes>
+     
       <PastEvents/>
       <Footer/>
       </BrowserRouter>

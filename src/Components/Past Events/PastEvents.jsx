@@ -21,13 +21,9 @@ const PastEvents = () => {
             alt=""
           />
           <div>
-            <h2>Honeymoon</h2>
+            <h2>Festival Frenzy</h2>
             <p>
-              Begin your journey of love and togetherness with a honeymoon that
-              sets the tone for a lifetime of shared adventures. Celebrate your
-              union in romantic destinations, surrounded by breathtaking
-              landscapes and luxurious accommodations, tailor-made for the two
-              of you.
+            Amidst the vibrant chaos of the music festival, there's a certain magic that pervades the atmosphere. It's in the way the crowd sways to the rhythm, the flicker of excitement in their eyes, and the infectious energy that pulses through the air.
             </p>
             <button>See the Offers</button>
           </div>
@@ -38,13 +34,9 @@ const PastEvents = () => {
             alt=""
           />
           <div>
-            <h2>Group Trip</h2>
+            <h2>Captivating Cadence</h2>
             <p>
-              Traveling is more enjoyable when shared with friends, family, or
-              like-minded explorers. Our group trips bring people together,
-              fostering new friendships as you embark on thrilling adventures,
-              discover cultural wonders, and create memories that bond you
-              forever.
+            Immerse yourself in the captivating cadence of melodies echoing through the air, transcending boundaries of time and space. As the vibrant lights dance in harmony with the pulsating beats, every note becomes a brushstroke painting a vivid tapestry of emotions
             </p>
             <button>See the Offers</button>
           </div>
@@ -55,12 +47,9 @@ const PastEvents = () => {
             alt=""
           />
           <div>
-            <h2>Family Vacation</h2>
+            <h2>Twilight Illuminations</h2>
             <p>
-              Create cherished moments with your loved ones on a family vacation
-              that caters to all ages. From fun-filled activities for kids to
-              relaxation for adults, our family-friendly destinations ensure
-              everyone finds joy and relaxation.
+            In the dimming twilight, as the sun bids farewell to the day, a mesmerizing spectacle unfolds at the heart of the festival grounds. The air is electric with anticipation as the crowd gathers, their faces illuminated not by traditional light sources, but by the soft glow of countless phone flashlights. 
             </p>
             <button>See the Offers</button>
           </div>
@@ -71,12 +60,9 @@ const PastEvents = () => {
             alt=""
           />
           <div>
-            <h2>Solo Expedition</h2>
+            <h2>Harmonious Crescendo</h2>
             <p>
-              Embrace the freedom of solo travel and embark on a personal
-              journey of self-discovery. Our carefully curated solo expeditions
-              provide opportunities to meet fellow travelers, immerse yourself
-              in local culture, and uncover hidden gems at your own pace.
+            In the heart of the festival's pulsating energy, the stage becomes a sanctuary for creativity and expression. Against a backdrop of dazzling lights and roaring cheers, artists take center stage, their passion igniting the air with an electrifying fervor.
             </p>
             <button>See the Offers</button>
           </div>
@@ -87,30 +73,14 @@ const PastEvents = () => {
             alt=""
           />
           <div>
-            <h2>Luxury Retreat</h2>
+            <h2>Stage Spectacle</h2>
             <p>
-              Indulge in opulence and relaxation with our luxury retreats, where
-              every detail is meticulously curated to provide the utmost comfort
-              and exclusivity. Unwind in lavish accommodations, savor gourmet
-              cuisine, and enjoy personalized service that caters to your every
-              desire.
+            Glimmering under the radiant glow of spotlights, the stage transforms into a realm where dreams take flight and imaginations run wild. As the curtain rises, a world of infinite possibilities unfolds before the eager eyes of the audience.
             </p>
             <button>See the Offers</button>
           </div>
         </div>
-        <div className="card">
-          <img
-            src="p4.jpeg"
-            alt=""
-          />
-          <div>
-            <h2>Safari Adventure</h2>
-            <p>
-            Embark on a safari odyssey that blends discovery, luxury, and awe-inspiring landscapes. Our safari adventures transport you to the heart of the wild, awakening to new wonders each day. Let the savannah be your guide, where every trail unveils a gateway to extraordinary memories.
-            </p>
-            <button>See the Offers</button>
-          </div>
-        </div>
+        
       </div>
     </Container>
   );
@@ -118,8 +88,8 @@ const PastEvents = () => {
 const Container = styled.div`
   .banner {
     .bannerImg {
-      width: 100%;
-      height: 80vh;
+      width: 90%;
+      height: 50vh;
       object-fit: cover;
       position: absolute;
       z-index: -1;

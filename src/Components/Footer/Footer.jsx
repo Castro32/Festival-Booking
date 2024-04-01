@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { AiFillInstagram, AiFillTwitterCircle } from "react-icons/ai";
+import { AiFillInstagram, AiFillTwitterCircle, AiFillPhone, AiOutlineWhatsApp   } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { BsFacebook } from "react-icons/bs";
 import { SiGmail } from "react-icons/si";
@@ -50,28 +50,23 @@ const Footer = () => {
               Discover the Heartbeat of East Africa with Us!
             </p>
             <div className="social-icons">
-              <a href="https://www.instagram.com/">
+              <a href="https://www.instagram.com/cas_fide.l?">
                 <AiFillInstagram className="icon" />
               </a>
-              <a href="https://www.instagram.com/">
+              <a href="https://www.twitter.com/">
                 <AiFillTwitterCircle className="icon" />
               </a>
-              <a href="https://www.instagram.com/">
+              <a href="https://wa.me/254114096574">
+                <AiOutlineWhatsApp className="icon" />
+              </a>
+              <a href="mailto:okanga.fidel@gmail.com">
                 <SiGmail className="icon" />
               </a>
-            </div>
-            <p className="footer-text">
-              Privacy Policy | © {new Date().getFullYear()} Raha Festival <br />
-              Designed by{" "}
-              <a
-                target="_blank"
-                rel="noreferrer"
-                href="https://jam3s.netlify.app/"
-                className="designer-link"
-              >
-                JAM3S.DEV
+              <a href="tel://+254114096574">
+                <AiFillPhone  className="icon"/>
               </a>
-            </p>
+            </div>
+            
           </div>
           <div className="footer-section">
             <p className="footer-heading">PermaLinks</p>
@@ -111,11 +106,18 @@ const Footer = () => {
             {successMessage && <p className="success-message">{successMessage}</p>}
             {errorMessage && <p className="error-message">{errorMessage}</p>}
           </div>
-          <div className="footer-section">
-            <p className="footer-heading">Contacts</p>
-            <p className="contact-info">+254114096574</p>
-            <p className="contact-info">okanga.fidel@gmail.com</p>
-          </div>
+          <p className="footer-text">
+              Privacy Policy | © {new Date().getFullYear()} Raha Festival <br />
+              Designed by{" "}
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href=""
+                className="designer-link"
+              >
+                Cas™
+              </a>
+            </p>
         </div>
       </div>
     </StyledFooter>

@@ -1,12 +1,12 @@
 import './App.css';
 import About from './Components/About/About';
-import Contact from './Components/Partners/Partners';
 import Home from './Components/Home/Home';
 import Navbar from './Components/Navbar/Navbar';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Partners from './Components/Partners/Partners';
 import PastEvents from './Components/Past Events/PastEvents';
 import Footer from './Components/Footer/Footer';
+import Booking from './Components/Booking/Booking';
 
 
 
@@ -23,10 +23,12 @@ function App() {
       <Routes>
         
       </Routes>
-     
+      
       <PastEvents/>
+      <Booking/>
       <Footer/>
       </BrowserRouter>
+      
     </div>
   );
 }

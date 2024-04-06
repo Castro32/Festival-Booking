@@ -20,13 +20,14 @@ function App() {
       <Home/>
       <Partners/> 
       <About/>
+      <PastEvents/>
+      <Footer/>
+
       <Routes>
-        
+        <Route path='/booking' element={<Booking/>}/>
       </Routes>
       
-      <PastEvents/>
-      <Booking/>
-      <Footer/>
+      
       </BrowserRouter>
       
     </div>

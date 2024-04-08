@@ -136,7 +136,7 @@ const Booking = () => {
           />
         </TicketType>
         <Subtotal>Subtotal: {calculateSubtotal()} KSh</Subtotal>
-        <Button>Get Ticket</Button>
+        <Button>Purchase</Button>
       </TicketSection>
     </Container>
   );

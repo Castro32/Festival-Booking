@@ -125,14 +125,14 @@ const Footer = () => {
 };
 
 const StyledFooter = styled.footer`
-  background-color: #2e2e3a;
+  background-color: powderblue;
   color: #ffffff;
-  padding: 2rem 0;
+  padding: 1rem 0;
 
   .container {
     max-width: 124rem;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 1rem;
   }
 
   .footer-content {
@@ -140,31 +140,32 @@ const StyledFooter = styled.footer`
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 1rem;
   }
 
   .footer-section {
-    flex: 1 1 20rem;
+    flex: 1 1 10rem;
   }
   .footer-section .logo{
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
   }
   .footer-heading {
     font-size: 22px;
     font-weight: bold;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
 
   .footer-text {
+    color: black;
     font-size: 18px;
-    line-height: 1.5;
+    line-height: 1.2;
     margin-bottom: 1rem;
   }
 
   .social-icons {
     display: flex;
-    gap: 1rem;
+    gap: 0.5rem;
     margin-bottom: 1rem;
   }
 
@@ -179,7 +180,7 @@ const StyledFooter = styled.footer`
 
   .footer-link {
     font-size: 16px;
-    color: #ffffff;
+    color: black;
     text-decoration: none;
     margin-bottom: 0.5rem;
     display: block;
@@ -191,6 +192,7 @@ const StyledFooter = styled.footer`
   }
 
   .subscribe-form {
+    color: black;
     display: flex;
     gap: 1rem;
     align-items: center;
@@ -202,7 +204,7 @@ const StyledFooter = styled.footer`
     padding: 0.5rem;
     font-size: 16px;
     color: #000000;
-    flex: 1;
+    flex: 0.5;
   }
 
   .subscribe-button {
@@ -225,7 +227,7 @@ const StyledFooter = styled.footer`
   }
 
   .success-message {
-    color: #00ff00;
+    color: green;
     margin-top: 0.5rem;
   }
 
@@ -236,7 +238,7 @@ const StyledFooter = styled.footer`
 
   .contact-info {
     font-size: 16px;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
   }
 
   .designer-link {

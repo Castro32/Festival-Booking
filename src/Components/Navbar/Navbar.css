@@ -3,7 +3,8 @@
     justify-content: space-between;
     align-items: center;
     background-color: powderblue;
-    padding: 10px;
+    padding: 20px;
+    height: 80px;
   }
   
   .navbar-brand {
@@ -54,10 +55,12 @@
   
   @media (max-width: 768px) {
     .navbar-toggler {
+      position: fixed;
         top: 0;
-        right: 0;
+        right: 20px;
       display: block;
     }
+    
   
     .navbar-menu {
         z-index: 999;
@@ -71,8 +74,8 @@
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
     .navbar-brand img {
-        width: 20px;
-        height: 20px;
+        width: 30px;
+        height: 30px;
         margin-left: 0;
       }
     .navbar-menu.open {

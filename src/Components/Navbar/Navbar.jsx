@@ -9,6 +9,17 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const handleClickGetTicket = () => {
+    // Perform any necessary actions before navigating, if needed
+    // For example, you can close the menu if it's open
+    if (isMenuOpen) {
+      setIsMenuOpen(false);
+    }
+    // You can navigate to the booking page using react-router-dom's Link
+    // The 'to' attribute specifies the URL path to navigate to
+    // Change '/booking' to the actual path of your booking page
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar-brand">
@@ -22,19 +33,20 @@ const Navbar = () => {
       <div className={`navbar-menu ${isMenuOpen ? 'open' : ''}`}>
         <ul>
           <li>
-            <Link to="/home">Home</Link>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/about">Partners</Link>
+            <Link to="/partners">Partners</Link>
           </li>
           <li>
-            <Link to="/menu">About</Link>
+            <Link to="/faqs">FAQ's</Link>
           </li>
           <li>
-            <Link to="/contact">Past Events</Link>
+            <Link to="/past-events">Past Events</Link>
           </li>
+          {/* Add onClick event to trigger the handleClickGetTicket function */}
           <li>
-            <Link to="/booking" className="book-button">
+            <Link to="/booking" className="book-button" onClick={handleClickGetTicket}>
               Get Ticket!
             </Link>
           </li>

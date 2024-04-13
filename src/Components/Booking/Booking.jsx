@@ -1,25 +1,20 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-
 
 const Container = styled.div`
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-  
   color: #fff;
 `;
-
-
-
-
 
 const Navigation = styled.nav`
   display: flex;
   gap: 20px;
 `;
 
-const NavLink = styled.a`
+const NavLink = styled(Link)`
   color: #fff;
   text-decoration: none;
   cursor: pointer;
@@ -70,6 +65,30 @@ const Button = styled.button`
   margin-top: 20px;
 `;
 
+const DetailsSection = styled.div`
+  margin-top: 20px;
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 8px;
+`;
+
+const DetailsInput = styled.input`
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+`;
+
+const CheckboxLabel = styled.label`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+`;
+
 const Booking = () => {
   const [ticketQuantities, setTicketQuantities] = useState({
     'regular-advance': 0,
@@ -77,6 +96,11 @@ const Booking = () => {
     'vip-advance': 0,
     'vip-gate': 0,
   });
+
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [agreed, setAgreed] = useState(false);
 
   const handleQuantityChange = (event, ticketType) => {
     setTicketQuantities({
@@ -102,7 +126,12 @@ const Booking = () => {
 
   return (
     <Container>
-      
+      <Navigation>
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/about">About</NavLink>
+        <NavLink to="/contact">Contact</NavLink>
+      </Navigation>
+
       <TicketSection>
         <TicketType>
           <TicketName>Regular Advance</TicketName>
@@ -114,7 +143,18 @@ const Booking = () => {
             onChange={(e) => handleQuantityChange(e, 'regular-advance')}
           />
         </TicketType>
-        
+
+        <TicketType>
+          <TicketName>Regular Gate</TicketName>
+          <TicketPrice>1,000.00 KSh</TicketPrice>
+          <QuantityInput
+            type="number"
+            min="0"
+            value={ticketQuantities['regular-gate']}
+            onChange={(e) => handleQuantityChange(e, 'regular-gate')}
+          />
+        </TicketType>
+
         <TicketType>
           <TicketName>VIP Advance</TicketName>
           <TicketPrice>2,000.00 KSh</TicketPrice>
@@ -125,8 +165,9 @@ const Booking = () => {
             onChange={(e) => handleQuantityChange(e, 'vip-advance')}
           />
         </TicketType>
+
         <TicketType>
-          <TicketName>VVIP</TicketName>
+          <TicketName>VIP Gate</TicketName>
           <TicketPrice>4,500.00 KSh</TicketPrice>
           <QuantityInput
             type="number"
@@ -135,8 +176,42 @@ const Booking = () => {
             onChange={(e) => handleQuantityChange(e, 'vip-gate')}
           />
         </TicketType>
+
         <Subtotal>Subtotal: {calculateSubtotal()} KSh</Subtotal>
-        <Button>Purchase</Button>
+
+        <DetailsSection>
+          <h2>Enter Your Details</h2>
+          <DetailsInput
+            type="text"
+            placeholder="Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+          <DetailsInput
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <DetailsInput
+            type="tel"
+            placeholder="Phone"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+          />
+          <CheckboxLabel>
+            <input
+              type="checkbox"
+              checked={agreed}
+              onChange={(e) => setAgreed(e.target.checked)}
+            />
+            I have read and agree to Raha Festival's Privacy Policy, Terms and Conditions
+          </CheckboxLabel>
+        </DetailsSection>
+
+        <NavLink to="/purchase">
+          <Button>Purchase</Button>
+        </NavLink>
       </TicketSection>
     </Container>
   );

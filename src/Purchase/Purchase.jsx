@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom'; // Import useLocation hook
 import styled from 'styled-components';
 
+// Styled Components
 const Container = styled.div`
   max-width: 600px;
   margin: 0 auto;
@@ -25,7 +27,6 @@ const PaymentOption = styled.label`
   align-items: center;
   margin-bottom: 10px;
   cursor: pointer;
-
   input[type='radio'] {
     margin-right: 10px;
   }
@@ -41,7 +42,6 @@ const MobileNumberInput = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 10px;
-
   input {
     margin-left: 10px;
     padding: 8px;
@@ -59,13 +59,34 @@ const ProceedButton = styled.button`
   cursor: pointer;
 `;
 
-const Purchase = ({ calculateSubtotal }) => {
+// Purchase Component
+const Purchase = () => {
+  const location = useLocation(); // Use useLocation hook
+  const { ticketQuantities } = location.state || {};
+
+  // Calculate subtotal
+  const calculateSubtotal = () => {
+    if (!ticketQuantities) return 0;
+    
+    const ticketPrices = {
+      'regular-advance': 700,
+      'regular-gate': 1000,
+      'vip-advance': 2000,
+      'vip-gate': 4500,
+    };
+
+    return Object.entries(ticketQuantities).reduce((total, [ticketType, quantity]) => {
+      return total + ticketPrices[ticketType] * quantity;
+    }, 0);
+  };
+
+  const subtotal = calculateSubtotal();
   const [selectedPaymentOption, setSelectedPaymentOption] = useState('mpesa');
   const [mobileNumber, setMobileNumber] = useState('');
 
   return (
     <Container>
-      <Title>Please select your preferred payment option</Title>
+      <Title>Pay using Mpesa:</Title>
       <PaymentOptions>
         <PaymentOption>
           <img src="./mpesa.png" height={40} width={40} alt="" />
@@ -79,7 +100,7 @@ const Purchase = ({ calculateSubtotal }) => {
         </PaymentOption>
       </PaymentOptions>
       <PaymentDetails>
-        <h3>Pay "Raha Festival" {calculateSubtotal} KSh</h3>
+        <h3>Pay "Raha Festival" {subtotal} KSh</h3>
         {selectedPaymentOption === 'mpesa' && (
           <div>
             <PaymentSteps>1. Provide your MPESA mobile number below</PaymentSteps>

@@ -117,11 +117,9 @@ const Booking = () => {
       'vip-gate': 4500,
     };
 
-    let subtotal = 0;
-    Object.entries(ticketQuantities).forEach(([ticketType, quantity]) => {
-      subtotal += ticketPrices[ticketType] * quantity;
-    });
-    return subtotal;
+    return Object.entries(ticketQuantities).reduce((total, [ticketType, quantity]) => {
+      return total + ticketPrices[ticketType] * quantity;
+    }, 0);
   };
 
   return (
@@ -209,7 +207,15 @@ const Booking = () => {
           </CheckboxLabel>
         </DetailsSection>
 
-        <NavLink to="/purchase">
+        <NavLink
+          to={{
+            pathname: '/purchase',
+            state: {
+              calculateSubtotal,
+              ticketQuantities,
+            },
+          }}
+        >
           <Button>Purchase</Button>
         </NavLink>
       </TicketSection>

@@ -16,6 +16,7 @@ function App() {
   const handlePurchase = (total) => {
     setSubtotal(total);
   };
+
   return (
     <div>
       <BrowserRouter>
@@ -27,8 +28,8 @@ function App() {
           <Route path="/partners" element={<Partners />} />
           <Route path="/past-events" element={<PastEvents />} />
           <Route path="/purchase" element={<Purchase subtotal={calculateSubtotal} />} />
-          {/* Route for the Booking component */}
-          <Route path="/booking" element={<Booking />} />
+          {/* Route for the Booking component passing props */}
+          <Route path="/booking" element={<Booking onSubtotalChange={handlePurchase} calculateSubtotal={calculateSubtotal} />} />
         </Routes>
         <Footer />
       </BrowserRouter>

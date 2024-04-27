@@ -61,7 +61,8 @@ const ProceedButton = styled.button`
 
 // Purchase Component
 const Purchase = () => {
-  const location = useLocation(); // Use useLocation hook
+  const location = useLocation(); 
+  console.log('location')
   const { ticketQuantities } = location.state || {};
 
   // Calculate subtotal

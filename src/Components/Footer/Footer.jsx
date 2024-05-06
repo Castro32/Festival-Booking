@@ -45,10 +45,7 @@ const Footer = () => {
         <div className="footer-content">
           <div className="footer-section">
             <img src="festival logo.png" alt="footer_logo" className="logo" />
-            <p className="footer-text">
-              Empowering Journeys, Enchanting Memories <br />
-              Discover the Heartbeat of East Africa with Us!
-            </p>
+            
             <div className="social-icons">
               <a href="https://www.instagram.com/cas_fide.l?">
                 <AiFillInstagram className="icon" />

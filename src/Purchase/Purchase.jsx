@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom'; // Import useLocation hook
+import { useLocation } from 'react-router-dom'; 
 import styled from 'styled-components';
 
-// Styled Components
+
 const Container = styled.div`
   max-width: 600px;
   margin: 0 auto;

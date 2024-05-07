@@ -207,17 +207,14 @@ const Booking = () => {
           </CheckboxLabel>
         </DetailsSection>
 
-        <NavLink
-          to={{
+            <NavLink
+            to={{
             pathname: '/purchase',
-            state: {
-              calculateSubtotal,
-              ticketQuantities,
-            },
-          }}
-        >
-          <Button>Purchase</Button>
-        </NavLink>
+            search: `?subtotal=${calculateSubtotal()}&phone=${phone}`,
+            }}
+            >
+              <Button>Purchase</Button>
+            </NavLink>
       </TicketSection>
     </Container>
   );

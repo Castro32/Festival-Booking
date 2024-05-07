@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom'; 
 import styled from 'styled-components';
-
+import { useLocation, useSearchParams } from 'react-router-dom';
+import axios from 'axios'
 
 const Container = styled.div`
   max-width: 600px;
@@ -59,32 +59,46 @@ const ProceedButton = styled.button`
   cursor: pointer;
 `;
 
-// Purchase Component
+
 const Purchase = () => {
-  const location = useLocation(); 
-  console.log('location')
-  const { ticketQuantities } = location.state || {};
+  const [searchParams] = useSearchParams();
+  const subtotal = searchParams.get('subtotal');
+  const phone = searchParams.get('phone');
 
-  // Calculate subtotal
-  const calculateSubtotal = () => {
-    if (!ticketQuantities) return 0;
-    
-    const ticketPrices = {
-      'regular-advance': 700,
-      'regular-gate': 1000,
-      'vip-advance': 2000,
-      'vip-gate': 4500,
-    };
 
-    return Object.entries(ticketQuantities).reduce((total, [ticketType, quantity]) => {
-      return total + ticketPrices[ticketType] * quantity;
-    }, 0);
-  };
 
-  const subtotal = calculateSubtotal();
+
   const [selectedPaymentOption, setSelectedPaymentOption] = useState('mpesa');
-  const [mobileNumber, setMobileNumber] = useState('');
 
+
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      console.log('Phone Number:', phone);
+      console.log('Amount:', subtotal);
+  
+      try {
+        const payload = {
+          amount: subtotal,
+          phone: phone
+        };
+  
+        const url = 'http://localhost:5050/api/stk';
+        const response = await axios.post(url, payload);
+        console.log(response.data);
+  
+        // Handle the response from the backend as needed
+        if (response.status === 200) {
+          // Success
+          console.log('STK Push initiated successfully');
+        } else {
+          // Error
+          console.error('Error initiating STK Push');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    };
+  
   return (
     <Container>
       <Title>Pay using Mpesa:</Title>
@@ -111,15 +125,15 @@ const Purchase = () => {
             </PaymentSteps>
             <PaymentSteps>3. Once completed, you will receive the confirmation SMS for this transaction</PaymentSteps>
             <MobileNumberInput>
-              Provide your Mpesa [KE] Mobile number
-              <input
-                type="tel"
-                value={mobileNumber}
-                onChange={(e) => setMobileNumber(e.target.value)}
-                placeholder="e.g 7XX XXX XXX"
-              />
-            </MobileNumberInput>
-            <ProceedButton>Proceed</ProceedButton>
+     Provide your Mpesa [KE] Mobile number
+  <input
+    type="tel"
+    defaultValue={phone}
+    //onChange={(e) => setMobileNumber(e.target.value)}
+    placeholder="e.g 7XX XXX XXX"
+  />
+</MobileNumberInput>
+<ProceedButton onClick={handleSubmit}>Proceed</ProceedButton>
           </div>
         )}
       </PaymentDetails>

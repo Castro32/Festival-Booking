@@ -33,9 +33,7 @@ function App() {
           {/* Route for the Booking component passing props */}
           <Route path="/booking" element={<Booking onSubtotalChange={handlePurchase} calculateSubtotal={calculateSubtotal} />} />
         </Routes>
-        <Partners/>
-        <About/>
-        <PastEvents/>
+        
         <Footer />
       </BrowserRouter>
     </div>

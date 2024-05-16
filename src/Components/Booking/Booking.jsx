@@ -181,19 +181,19 @@ const Booking = () => {
           <h2>Enter Your Details</h2>
           <DetailsInput
             type="text"
-            placeholder="Name"
+            placeholder="Enter your name"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
           <DetailsInput
             type="email"
-            placeholder="Email"
+            placeholder="Enter your email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
           <DetailsInput
             type="tel"
-            placeholder="Phone"
+            placeholder="Enter phone number you'll be paying with"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
           />
